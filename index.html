@@ -275,7 +275,7 @@ BUILT FOR SERIOUS TRADERS — NOT SIGNAL CHASERS
           Multi-Timeframe Engine
         </h3>
         <p class="text-gray-400">
-          Higher timeframe trend validation + lower timeframe precision entry execution.
+          Higher timeframe trend validation + lower timeframe precision entry execution. Uses EMA 9/50/200, RSI, MACD, ADX, and Bollinger Bands.
         </p>
       </div>
 
@@ -284,7 +284,7 @@ BUILT FOR SERIOUS TRADERS — NOT SIGNAL CHASERS
           Structured 1% Risk Model
         </h3>
         <p class="text-gray-400">
-          Fixed capital allocation per trade. No martingale. Controlled drawdown.
+          Fixed capital allocation per trade. No martingale. Controlled drawdown with ATR-based dynamic stops.
         </p>
       </div>
 
@@ -293,7 +293,7 @@ BUILT FOR SERIOUS TRADERS — NOT SIGNAL CHASERS
           Quant Confidence Score
         </h3>
         <p class="text-gray-400">
-          Every signal includes probability-based confidence level for decision clarity.
+          Every signal includes probability-based confidence level (0-95%) and trade grade (A+, A, B, C) for decision clarity.
         </p>
       </div>
 
@@ -314,28 +314,28 @@ BUILT FOR SERIOUS TRADERS — NOT SIGNAL CHASERS
       <div class="glass-card p-6 rounded-xl">
         <h3 class="font-semibold text-primary mb-2">1. Structure Scan</h3>
         <p class="text-gray-400 text-sm">
-          Higher timeframe bias detection & liquidity mapping.
+          Higher timeframe bias detection (M15, H1, H4, Weekly) & liquidity mapping.
         </p>
       </div>
 
       <div class="glass-card p-6 rounded-xl">
         <h3 class="font-semibold text-primary mb-2">2. Confluence Check</h3>
         <p class="text-gray-400 text-sm">
-          RSI, EMA & volatility confirmation.
+          RSI, MACD, EMA, ADX, Bollinger Bands, Stochastic, and candlestick patterns (engulfing, pin bar).
         </p>
       </div>
 
       <div class="glass-card p-6 rounded-xl">
         <h3 class="font-semibold text-primary mb-2">3. Risk Calculation</h3>
         <p class="text-gray-400 text-sm">
-          ATR-based dynamic stop loss positioning.
+          ATR-based dynamic stop loss positioning, minimum RR 1:2 (scalp) or 1:2.5 (swing).
         </p>
       </div>
 
       <div class="glass-card p-6 rounded-xl">
         <h3 class="font-semibold text-primary mb-2">4. Signal Deployment</h3>
         <p class="text-gray-400 text-sm">
-          Structured entry with confidence score.
+          Structured entry with confidence score, trade grade, and detailed reasoning.
         </p>
       </div>
 
@@ -357,7 +357,7 @@ BUILT FOR SERIOUS TRADERS — NOT SIGNAL CHASERS
           <p>🕒 Session: <span class="text-primary">London</span></p>
           <p>📊 Bias: <span class="text-green-400">BULLISH</span></p>
           <p>📡 Price: <span id="livePrice">2035.20</span></p>
-          <p>🧠 Confidence: <span class="text-primary">78%</span></p>
+          <p>🧠 Confidence: <span class="text-primary">78%</span> (Grade: <span class="text-yellow-400">A</span>)</p>
         </div>
         <div>
           <p>📈 Signal: <span class="text-primary">BUY</span></p>
@@ -366,6 +366,7 @@ BUILT FOR SERIOUS TRADERS — NOT SIGNAL CHASERS
           <p>🎯 TP2: 2048.30</p>
         </div>
       </div>
+      <p class="mt-4 text-sm text-gray-400">🧠 Reason: HTF bullish alignment, RSI pullback, liquidity sweep detected.</p>
     </div>
   </div>
 </section>
@@ -644,7 +645,7 @@ slider.addEventListener("input", function() {
 
 <div class="divider-line"></div>
 
-<!-- FEATURE COMPARISON -->
+<!-- FEATURE COMPARISON (UPDATED) -->
 <section class="py-20 px-6 bg-cardbg">
   <div class="max-w-6xl mx-auto text-center">
 
@@ -669,12 +670,15 @@ slider.addEventListener("input", function() {
           <div>
             <h4 class="font-semibold text-white mb-2">📊 Technical Indicators</h4>
             <ul class="space-y-1">
-              <li>• EMA 50 & 200 (15m & 5m)</li>
+              <li>• EMA 9, 50, 200 (M5 & M15)</li>
               <li>• RSI (14)</li>
-              <li>• MACD</li>
-              <li>• ATR (14)</li>
+              <li>• MACD with Histogram</li>
+              <li>• ATR (14) for dynamic stops</li>
               <li>• Stochastic Oscillator</li>
-              <li>• ADX + DMI</li>
+              <li>• ADX + DMI (trend strength)</li>
+              <li>• Bollinger Bands (pullback & squeeze)</li>
+              <li>• Daily Pivot Points</li>
+              <li>• Engulfing Candle Detection</li>
             </ul>
           </div>
 
@@ -683,7 +687,7 @@ slider.addEventListener("input", function() {
             <ul class="space-y-1">
               <li>• Liquidity Sweep Detection</li>
               <li>• Dynamic Support & Resistance</li>
-              <li>• Session Volatility Boost</li>
+              <li>• Session Volatility Boost (Asia, London, NY)</li>
             </ul>
           </div>
 
@@ -693,7 +697,8 @@ slider.addEventListener("input", function() {
               <li>• ATR Adaptive Filter</li>
               <li>• Minimum RR 1:2</li>
               <li>• Confidence Score (0–95%)</li>
-              <li>• Signal Threshold ≥45</li>
+              <li>• Signal Threshold ≥50</li>
+              <li>• Trade Grade: A+, A, B, C</li>
             </ul>
           </div>
 
@@ -722,9 +727,10 @@ slider.addEventListener("input", function() {
           <div>
             <h4 class="font-semibold text-white mb-2">📊 Higher Timeframe Bias</h4>
             <ul class="space-y-1">
-              <li>• EMA 50 & 200 (Weekly, H4, H1)</li>
+              <li>• Weekly EMA200 bias</li>
+              <li>• H4 EMA200 confirmation</li>
+              <li>• H1 structure (EMA 9/50/200)</li>
               <li>• Multi-Timeframe Alignment</li>
-              <li>• Institutional Macro Filter</li>
             </ul>
           </div>
 
@@ -733,18 +739,20 @@ slider.addEventListener("input", function() {
             <ul class="space-y-1">
               <li>• Break of Structure (BoS)</li>
               <li>• Swing Bias Alignment</li>
-              <li>• RSI Divergence Detection</li>
+              <li>• RSI Divergence Detection (30-bar)</li>
               <li>• Pin Bar Confirmation</li>
               <li>• Liquidity Mapping Extended</li>
+              <li>• Fibonacci Retracement Levels (38.2%, 50%)</li>
             </ul>
           </div>
 
           <div>
             <h4 class="font-semibold text-white mb-2">⚖ Enhanced Risk Model</h4>
             <ul class="space-y-1">
-              <li>• Minimum RR 1:2.5</li>
-              <li>• More Sensitive Threshold ≥40</li>
+              <li>• Minimum RR 1:2.5 (swing) & 1:3+ target</li>
+              <li>• More Sensitive Threshold ≥45</li>
               <li>• ATR-Based Limit Entry Zone</li>
+              <li>• ATR Expansion Filter</li>
             </ul>
           </div>
 
@@ -754,6 +762,7 @@ slider.addEventListener("input", function() {
               <li>• Limit Entry Zone Display</li>
               <li>• Swing + Scalping Alignment Score</li>
               <li>• Extended Institutional Confirmation</li>
+              <li>• ADX >25 mandatory for swing entries</li>
             </ul>
           </div>
 
@@ -793,9 +802,9 @@ slider.addEventListener("input", function() {
 
         <div class="text-left text-sm text-gray-300 space-y-3 mb-8">
           <p>✔ Real-time Scalping Signal</p>
-          <p>✔ EMA + RSI + MACD Logic</p>
+          <p>✔ EMA + RSI + MACD + ADX + BB Logic</p>
           <p>✔ ATR Dynamic SL</p>
-          <p>✔ Confidence Score</p>
+          <p>✔ Confidence Score & Trade Grade</p>
           <p>✔ Risk:Reward 1:2 Model</p>
           <p class="text-yellow-400">✖ No Higher Timeframe Filter</p>
           <p class="text-yellow-400">✖ No Institutional Swing Setup</p>
